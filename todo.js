@@ -14,7 +14,7 @@ function addTask() {
     const task = {
         text: taskText,
         completed: false,
-        important: false // Added important property
+        important: false 
     };
     
     tasks.push(task);
@@ -25,7 +25,7 @@ function addTask() {
 
 function renderTasks() {
     const taskList = document.getElementById("taskList");
-    taskList.innerHTML = ""; // Clear the list before rendering
+    taskList.innerHTML = ""; 
 
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
@@ -48,12 +48,12 @@ function renderTasks() {
 }
 
 function toggleCompleted(index) {
-    tasks[index].completed = !tasks[index].completed; // Toggle completed status
+    tasks[index].completed = !tasks[index].completed;
     renderTasks();
 }
 
 function markImportant(index) {
-    tasks[index].important = !tasks[index].important; // Toggle important status
+    tasks[index].important = !tasks[index].important; 
     renderTasks();
 }
 
@@ -71,9 +71,9 @@ function filterTasks() {
         } else if (filter === "pending") {
             return !task.completed;
         } else if (filter === "important") {
-            return task.important; // Filter for important tasks
+            return task.important; 
         }
-        return true; // Show all
+        return true; 
     });
 
     renderFilteredTasks(filteredTasks);
@@ -81,7 +81,7 @@ function filterTasks() {
 
 function renderFilteredTasks(filteredTasks) {
     const taskList = document.getElementById("taskList");
-    taskList.innerHTML = ""; // Clear the list before rendering
+    taskList.innerHTML = "";
 
     filteredTasks.forEach((task, index) => {
         const li = document.createElement("li");
@@ -108,8 +108,8 @@ function toggleMenu() {
     const menu = document.getElementById("menu");
     // Toggle visibility
     if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block"; // Show menu
+        menu.style.display = "block"; 
     } else {
-        menu.style.display = "none"; // Hide menu
+        menu.style.display = "none"; 
     }
 }
